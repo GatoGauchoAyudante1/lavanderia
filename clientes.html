@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clientes - Lavandería</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: #1f2937;
+      color: #fff;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    /* BARRA DE BÚSQUEDA */
+    .search-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 15px 20px;
+      font-size: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: border-color 0.15s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* LISTA DE CLIENTES */
+    .clients-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .client-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      border-left: 6px solid #2563eb;
+    }
+
+    .client-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    .client-info {
+      flex: 1;
+    }
+
+    .client-name {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .client-details {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 5px;
+    }
+
+    .client-status {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .client-actions {
+      display: flex;
+      gap: 10px;
+      margin-left: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-small {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.15s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-small:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-edit {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .btn-edit:hover {
+      background: #2563eb;
+    }
+
+    /* BOTONES PRINCIPALES */
+    .button-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn {
+      padding: 18px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15s 30px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #1e40af;
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #222;
+    }
+
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .page-title {
+        font-size: 24px;
+      }
+
+      .page-header {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-box {
+        max-width: 100%;
+      }
+
+      .client-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .client-actions {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Clientes - Lavandería</h1>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+
+    <!-- HEADER DE PÁGINA CON BÚSQUEDA -->
+    <div class="page-header">
+      <div class="page-title">👥 Clientes</div>
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="🔍 Buscar por nombre o teléfono...">
+      </div>
+    </div>
+
+    <!-- LISTA DE CLIENTES -->
+    <div class="clients-list">
+
+      <!-- CLIENTE 1 -->
+      <div class="client-item">
+        <div class="client-info">
+          <div class="client-name">María González</div>
+          <div class="client-details">📞 (555) 123-4567 | 📧 maria@email.com</div>
+          <div class="client-details">💰 Saldo: $250 crédito</div>
+          <span class="client-status">Cliente frecuente</span>
+        </div>
+        <div class="client-actions">
+          <button class="btn-small btn-edit">Ver historial</button>
+        </div>
+      </div>
+
+      <!-- CLIENTE 2 -->
+      <div class="client-item">
+        <div class="client-info">
+          <div class="client-name">Carlos Martínez</div>
+          <div class="client-details">📞 (555) 234-5678 | 📧 carlos@email.com</div>
+          <div class="client-details">💰 Sin deuda</div>
+          <span class="client-status">Cliente frecuente</span>
+        </div>
+        <div class="client-actions">
+          <button class="btn-small btn-edit">Ver historial</button>
+        </div>
+      </div>
+
+      <!-- CLIENTE 3 -->
+      <div class="client-item">
+        <div class="client-info">
+          <div class="client-name">Ana López</div>
+          <div class="client-details">📞 (555) 345-6789 | 📧 ana@email.com</div>
+          <div class="client-details">💰 Debe: $120</div>
+          <span class="client-status">Cliente nuevo</span>
+        </div>
+        <div class="client-actions">
+          <button class="btn-small btn-edit">Ver historial</button>
+        </div>
+      </div>
+
+      <!-- CLIENTE 4 -->
+      <div class="client-item">
+        <div class="client-info">
+          <div class="client-name">Roberto Díaz</div>
+          <div class="client-details">📞 (555) 456-7890 | 📧 roberto@email.com</div>
+          <div class="client-details">💰 Saldo: $80 crédito</div>
+          <span class="client-status">Cliente frecuente</span>
+        </div>
+        <div class="client-actions">
+          <button class="btn-small btn-edit">Ver historial</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTONES DE NAVEGACIÓN -->
+    <div class="button-group">
+      <a href="agregar_cliente.html" class="btn btn-primary">➕ Agregar Cliente</a>
+      <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

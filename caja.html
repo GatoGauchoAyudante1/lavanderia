@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caja - Lavandería</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: #1f2937;
+      color: #fff;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      padding: 40px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 50px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* TARJETAS DE TOTALES */
+    .totals-section {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    .total-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* TARJETA DESTACADA: Efectivo */
+    .total-card.primary {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: #fff;
+      padding: 60px 40px;
+    }
+
+    .total-label {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 15px;
+    }
+
+    .total-amount {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .total-card.primary .total-amount {
+      font-size: 64px;
+    }
+
+    /* TARJETA SECUNDARIA: Transferencias */
+    .total-card.secondary {
+      background: #f3f4f6;
+      color: #1f2937;
+      border: 2px solid #e5e7eb;
+    }
+
+    /* BOTONES */
+    .button-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 25px 60px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      display: inline-block;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: #dc2626;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #b91c1c;
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #222;
+    }
+
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .page-title {
+        font-size: 24px;
+      }
+
+      .total-card {
+        padding: 30px;
+      }
+
+      .total-card.primary {
+        padding: 40px 30px;
+      }
+
+      .total-amount {
+        font-size: 36px;
+      }
+
+      .total-card.primary .total-amount {
+        font-size: 48px;
+      }
+
+      .btn {
+        padding: 20px 40px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Caja - Lavandería</h1>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="page-title">💰 Estado de Caja</div>
+
+    <!-- TOTALES DESTACADOS -->
+    <div class="totals-section">
+
+      <!-- TOTAL EFECTIVO: Lo más importante -->
+      <div class="total-card primary">
+        <div class="total-label">Efectivo en Caja</div>
+        <div class="total-amount">$4,580</div>
+      </div>
+
+      <!-- TOTAL TRANSFERENCIAS: Informativo -->
+      <div class="total-card secondary">
+        <div class="total-label">Total por Transferencia</div>
+        <div class="total-amount">$2,150</div>
+      </div>
+
+    </div>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <div class="button-group">
+      <button class="btn btn-primary">🔐 Cerrar Caja Hoy</button>
+      <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

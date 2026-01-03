@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entregas - Lavandería</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: #1f2937;
+      color: #fff;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      color: #1f2937;
+    }
+
+    /* LISTA DE ENTREGAS */
+    .deliveries-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .delivery-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-left: 6px solid #e5e7eb;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .delivery-item:hover {
+      transform: translateX(4px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+
+    /* ESTADO: Pendiente */
+    .delivery-item.pending {
+      border-left-color: #f59e0b;
+      background: #fffbf0;
+    }
+
+    /* ESTADO: Listo */
+    .delivery-item.ready {
+      border-left-color: #3b82f6;
+      background: #f0f7ff;
+    }
+
+    /* ESTADO: Entregado */
+    .delivery-item.delivered {
+      border-left-color: #10b981;
+      background: #f0fdf4;
+    }
+
+    .delivery-info {
+      flex: 1;
+    }
+
+    .delivery-customer {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .delivery-details {
+      font-size: 16px;
+      color: #6b7280;
+      margin-bottom: 5px;
+    }
+
+    .delivery-status {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      min-width: 150px;
+    }
+
+    .status-pending {
+      background: #f59e0b;
+      color: #fff;
+    }
+
+    .status-ready {
+      background: #3b82f6;
+      color: #fff;
+    }
+
+    .status-delivered {
+      background: #10b981;
+      color: #fff;
+    }
+
+    /* BOTONES */
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 18px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #222;
+    }
+
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .page-title {
+        font-size: 24px;
+      }
+
+      .delivery-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .delivery-status {
+        margin-top: 15px;
+        width: 100%;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Entregas - Lavandería</h1>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="page-title">📦 Entregas Pendientes</div>
+
+    <!-- LISTA DE TRABAJOS CON ESTADOS -->
+    <div class="deliveries-list">
+
+      <!-- ITEM 1: Pendiente -->
+      <div class="delivery-item pending">
+        <div class="delivery-info">
+          <div class="delivery-customer">María González</div>
+          <div class="delivery-details">Traje gris + 3 camisas | Entrada: Lunes 10:30</div>
+        </div>
+        <div class="delivery-status status-pending">⏳ Pendiente</div>
+      </div>
+
+      <!-- ITEM 2: Listo -->
+      <div class="delivery-item ready">
+        <div class="delivery-info">
+          <div class="delivery-customer">Carlos Martínez</div>
+          <div class="delivery-details">Vestido azul + tintorería | Entrada: Domingo 14:00</div>
+        </div>
+        <div class="delivery-status status-ready">✅ Listo</div>
+      </div>
+
+      <!-- ITEM 3: Listo -->
+      <div class="delivery-item ready">
+        <div class="delivery-info">
+          <div class="delivery-customer">Ana López</div>
+          <div class="delivery-details">Cortinas de tela gruesa | Entrada: Domingo 11:00</div>
+        </div>
+        <div class="delivery-status status-ready">✅ Listo</div>
+      </div>
+
+      <!-- ITEM 4: Pendiente -->
+      <div class="delivery-item pending">
+        <div class="delivery-info">
+          <div class="delivery-customer">Roberto Díaz</div>
+          <div class="delivery-details">Alquiler de traje completo | Entrada: Hoy 09:00</div>
+        </div>
+        <div class="delivery-status status-pending">⏳ Pendiente</div>
+      </div>
+
+      <!-- ITEM 5: Entregado -->
+      <div class="delivery-item delivered">
+        <div class="delivery-info">
+          <div class="delivery-customer">Juan Pérez</div>
+          <div class="delivery-details">2 camisas alquiladas | Entrega: Hoy 16:45</div>
+        </div>
+        <div class="delivery-status status-delivered">🎉 Entregado</div>
+      </div>
+
+    </div>
+
+    <!-- BOTONES DE NAVEGACIÓN -->
+    <div class="button-group">
+      <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

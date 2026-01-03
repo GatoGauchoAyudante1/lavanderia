@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard - Lavandería</title>
+  <title>Inicio - Lavandería</title>
   <style>
     * {
       box-sizing: border-box;
@@ -37,7 +37,7 @@
       opacity: 0.9;
     }
 
-    /* MAIN DASHBOARD */
+    /* MAIN MENU */
     .dashboard {
       padding: 30px;
       display: grid;
@@ -58,6 +58,8 @@
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       padding: 30px;
       text-align: center;
+      text-decoration: none;
+      color: inherit;
     }
 
     .card:hover {
@@ -129,38 +131,38 @@
     <div class="datetime">Lunes 3 de Febrero - 15:30</div>
   </div>
 
-  <!-- DASHBOARD -->
+  <!-- MENU PRINCIPAL -->
   <div class="dashboard">
 
-    <div class="card primary">
+    <a href="nueva_entrada.html" class="card primary">
       <div class="icon">➕</div>
       <div class="title">Nueva Entrada</div>
       <div class="subtitle">Recibir ropa / servicios</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="entregas.html" class="card">
       <div class="icon">📦</div>
       <div class="title">Entregas</div>
       <div class="subtitle">Cobrar y retirar</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="venta_perfumes.html" class="card">
       <div class="icon">💄</div>
       <div class="title">Venta Perfumes</div>
       <div class="subtitle">Venta rápida</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="clientes.html" class="card">
       <div class="icon">👥</div>
       <div class="title">Clientes</div>
       <div class="subtitle">Buscar o agregar</div>
-    </div>
+    </a>
 
-    <div class="card">
+    <a href="caja.html" class="card">
       <div class="icon">💰</div>
       <div class="title">Caja</div>
       <div class="subtitle">Efectivo y cierre</div>
-    </div>
+    </a>
 
   </div>
 

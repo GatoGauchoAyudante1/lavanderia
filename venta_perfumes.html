@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venta Perfumes - Lavandería</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: #1f2937;
+      color: #fff;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    /* MAIN CONTENT */
+    .container {
+      padding: 40px 30px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #1f2937;
+      text-align: center;
+    }
+
+    /* FORMULARIO DE VENTA */
+    .sales-form {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      color: #1f2937;
+    }
+
+    .form-input {
+      padding: 18px;
+      font-size: 18px;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+
+    /* TOTAL DESTACADO */
+    .total-display {
+      background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+      color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .total-label {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+
+    .total-amount {
+      font-size: 56px;
+      font-weight: bold;
+    }
+
+    /* BOTONES */
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 22px 40px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: #10b981;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #059669;
+    }
+
+    .btn-secondary {
+      background: #e5e7eb;
+      color: #222;
+    }
+
+    .btn-secondary:hover {
+      background: #d1d5db;
+    }
+
+    /* NOTA INFORMATIVA */
+    .info-note {
+      background: #f0f7ff;
+      border-left: 4px solid #3b82f6;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      font-size: 16px;
+      color: #1e3a8a;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      .page-title {
+        font-size: 24px;
+      }
+
+      .sales-form {
+        padding: 25px;
+      }
+
+      .total-amount {
+        font-size: 42px;
+      }
+
+      .btn {
+        padding: 18px 30px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Venta Perfumes - Lavandería</h1>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="page-title">💄 Venta Rápida</div>
+
+    <!-- NOTA INFORMATIVA -->
+    <div class="info-note">
+      ℹ️ Escanea el código de barras o ingresa manualmente el código del producto
+    </div>
+
+    <!-- FORMULARIO DE VENTA -->
+    <form class="sales-form">
+
+      <!-- CAMPO: Código de Producto -->
+      <div class="form-group">
+        <label class="form-label">Código Producto</label>
+        <input type="text" class="form-input" placeholder="Escanea o escribe código" autofocus>
+      </div>
+
+      <!-- CAMPO: Cantidad -->
+      <div class="form-group">
+        <label class="form-label">Cantidad</label>
+        <input type="number" class="form-input" placeholder="1" value="1" min="1">
+      </div>
+
+    </form>
+
+    <!-- TOTAL DESTACADO -->
+    <div class="total-display">
+      <div class="total-label">Total a Cobrar</div>
+      <div class="total-amount">$0.00</div>
+    </div>
+
+    <!-- BOTONES DE ACCIÓN -->
+    <div class="button-group">
+      <button class="btn btn-primary">💳 Cobrar</button>
+      <a href="index.html" class="btn btn-secondary">← Volver al Inicio</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
